@@ -14,6 +14,7 @@ def rollover(
     copy_func = shutil.copy2,
 ):
     """
+    Do file rollover like logging.handlers.RotatingFileHandler.
     """
     if backup_count > 0:
         for i in range(backup_count, 0, -1):
@@ -41,7 +42,9 @@ def dry_copy(src, dst):
     print(f'copy {src} -> {dst}')
 
 def main(argv=None):
-    "File rollover utility"
+    """
+    File rollover utility
+    """
     parser = argparse.ArgumentParser(
         description = main.__doc__,
         prog = 'rollover',
